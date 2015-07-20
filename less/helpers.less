@@ -1,0 +1,50 @@
+.gradient-bg(@start, @end) {
+  background: -webkit-linear-gradient(@start, @end); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(@start, @end); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(@start, @end); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(@start, @end); /* Standard syntax */
+}
+
+.overlay(@top: auto, @right: auto, @bottom: auto, @left: auto) {
+  position: absolute;
+  top: @top;
+  right: @right;
+  bottom: @bottom;
+  left: @left;
+}
+
+.draggable {
+  cursor: move; /* fallback if grab cursor is unsupported */
+  cursor: grab;
+  cursor: -moz-grab;
+  cursor: -webkit-grab;
+}
+
+ /* (Optional) Apply a "closed-hand" cursor during drag operation. */
+.draggable:active { 
+  cursor: grabbing;
+  cursor: -moz-grabbing;
+  cursor: -webkit-grabbing;
+}
+
+.transition(@prop, @speed, @duration) {
+  -webkit-transition: @prop @speed @duration;
+  -moz-transition: @prop @speed @duration;
+  -o-transition: @prop @speed @duration;
+  transition: @prop @speed @duration;
+}
+
+.border-radius(@topLeft, @topRight, @bottomRight, @bottomLeft) {
+  -webkit-border-radius: @topLeft @topRight @bottomRight @bottomLeft;
+  -moz-border-radius: @topLeft @topRight @bottomRight @bottomLeft;
+  border-radius: @topLeft @topRight @bottomRight @bottomLeft;
+}
+
+.circle(@size, @color) {
+  height: @size;
+  width: @size;
+  background: @color;
+  -moz-border-radius: @size/2;
+  -webkit-border-radius: @size/2;
+  border-radius: @size/2;
+}
